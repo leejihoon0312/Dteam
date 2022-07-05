@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head >
+<body>
+<div class="container">
+  <div>
+    <form  th:object="${SelectDateForm}" method="post">
+
+      <div>
+        <label >일자 선택 </label>
+        <input type="date" th:field="*{selectDate}" >
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br/>
+  </div >
+</div> <!-- /container -->
+</body>
+</html>

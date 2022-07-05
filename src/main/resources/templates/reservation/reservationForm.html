@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<div class="container">
+
+    <form role="form" action="/reservation" method="post">
+        <div class="form-group">
+            <div >
+                <label>선택 날짜 </label>
+                <input type="text" th:name="date" th:value="${date}"  >
+            </div>
+
+            <label for="seats">좌석</label>
+
+            <select name="seatId" id="seats" class="form-control">
+                <option value="">좌석</option>
+                <option th:each="seat : ${seatList}"
+                        th:value="${seat.seatId}"
+                        th:text="|테이블 ${seat.seatNum}번 , 시간대: ${seat.time}시|" />
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br/>
+
+</div> <!-- /container -->
+</body>
+</html>
